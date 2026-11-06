@@ -1,11 +1,9 @@
 
-// SELECT ELEMENTS
 const nav = document.querySelector('nav');
 const navLinks = document.querySelectorAll('nav a');
 const sections = document.querySelectorAll('section');
 const menuToggle = document.querySelector('.menu-toggle');
 
-// MOBILE MENU
 if (menuToggle) {
     menuToggle.addEventListener('click', () => {
         nav.classList.toggle('active');
@@ -16,7 +14,6 @@ if (menuToggle) {
     });
 }
 
-// NAVIGATION CLICK
 navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
         const targetId = this.getAttribute('href');
@@ -33,7 +30,6 @@ navLinks.forEach(link => {
                 block: 'start'
             });
 
-            // Close mobile menu
             nav.classList.remove('active');
 
             if (menuToggle) {
@@ -53,7 +49,6 @@ navLinks.forEach(link => {
     });
 });
 
-// ACTIVE NAVIGATION ON SCROLL
 function updateActiveNav() {
     let currentSection = '';
 
@@ -79,7 +74,6 @@ function updateActiveNav() {
 window.addEventListener('scroll', updateActiveNav);
 window.addEventListener('load', updateActiveNav);
 
-// SCROLL REVEAL ANIMATION
 const revealElements = document.querySelectorAll(
     '.home-content, .home-img, .heading, .project-card, .education-card, .about-content'
 );
